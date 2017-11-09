@@ -5,21 +5,8 @@ public class Relogio {
 	private int minutos; 
 	private int segundos;
 
-	public int getHoras()
-	{
-		return this.horas;
-	}
 	
-	public int getMinutos()
-	{
-		return this.minutos;
-	}
-	
-	public int getSegundos()
-	{
-		return this.segundos;
-	}
-	
+	//1
 	public Relogio(int horas, int minutos, int segundos)
 	{
 		int min=0, hor=0;
@@ -39,7 +26,7 @@ public class Relogio {
 			this.horas = horas+hor;
 		
 	}
-	
+	//4
 	public Relogio(int horas, int minutos)
 	{
 		int hor=0;
@@ -57,9 +44,25 @@ public class Relogio {
 	{
 		
 	}
+	//5
+	public int getHoras()
+	{
+		return this.horas;
+	}
 	
+	public int getMinutos()
+	{
+		return this.minutos;
+	}
+	
+	public int getSegundos()
+	{
+		return this.segundos;
+	}
+	
+	//7
 	public boolean compararRelogio(Relogio reg){
-//		if(this == reg)
+
 		if(this.horas == reg.horas && this.minutos == reg.minutos && this.segundos == reg.segundos)
 			return true;
 		return false;
@@ -69,6 +72,8 @@ public class Relogio {
 			return true;
 		return false;
 	}
+	
+	//9
 	public void somarSegundos(int segundo)
 	{
 		if(segundo>0)
@@ -80,6 +85,8 @@ public class Relogio {
 			this.minutos %= 60;
 		}
 	}
+	
+	//11
 	public void somarMinutos(int minuto)
 	{
 		if(minuto>0)
@@ -89,6 +96,8 @@ public class Relogio {
 			this.minutos %= 60;
 		}
 	}
+	
+	//13
 	public void somarHoras(int hora)
 	{
 		if(hora>0)
@@ -96,7 +105,8 @@ public class Relogio {
 			this.horas += hora;
 		}
 	}
-
+	
+	//15
 	public void somarRelogio(int hora, int minuto, int segundo)
 	{
 		somarSegundos(segundo);
@@ -128,6 +138,9 @@ public class Relogio {
 		this.somarMinutos(minutos);
 		this.somarHoras(horas);
 	}
+	
+	//17
+	@Override
 	public String toString()
 	{
 		String aux="";
