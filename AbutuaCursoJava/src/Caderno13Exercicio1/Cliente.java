@@ -30,10 +30,7 @@ public class Cliente {
 		return null;
 	}
 	
-	public double getTotalPedido()
-	{
-		return 0;
-	}
+	
 	
 	public int getCodigoCliente() {
 		return codigoCliente;
@@ -50,8 +47,18 @@ public class Cliente {
 	@Override
 	public String toString()
 	{
-		System.out.println(getTotalPedido());
+		System.out.println(getTotalPedidos());
 		
 		return null;
+	}
+	
+	public double getTotalPedidos()
+	{
+		return 0;
+	}
+	
+	public int getQuantidadePedidos() 
+	{
+		return 0;
 	}
 }

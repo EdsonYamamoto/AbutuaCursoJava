@@ -57,59 +57,19 @@ public class Data {
 	public String getDiaSemana()
 	{
 		String dia="";
-		int soma=3,dRef=1, mRef=1,aRef=1990;
-
-		soma+=this.dia;
-		while(this.ano != aRef)
-		{
-			if(isAnoBissexto(aRef))
-				soma+=366;
-			else
-				soma+=365;
-			aRef++;
-		}
+		int soma= getDiasCorridos();
 		
-		
-		while(this.mes!=mRef)
-		{
-			dRef++;
-			soma++;
-			if(!isValidDate(dRef, mRef, aRef))
-			{	
-				dRef=1;
-				mRef++;
-			}	
-		}
 		soma %= 7;
 		
 		switch(soma)
 		{
-		
-			case 0:
-				dia = "Domingo";
-			break;
-			case 1:
-				dia = "Segunda-Feira";
-			break;
-			
-			case 2:
-				dia = "Terça-Feira";
-			break;
-			
-			case 3:
-				dia = "Quarta-Feira";
-			break;
-			
-			case 4:
-				dia = "Quinta-Feira";
-			break;
-			
-			case 5:
-				dia = "Sexta-Feira";
-			break;
-			case 6:
-				dia = "Sábado";
-			break;
+			case 0:dia = "Segunda-Feira ";break;
+			case 1:dia = "Terça-Feira ";break;
+			case 2:dia = "Quarta-Feira ";break;
+			case 3:dia = "Quinta-Feira ";break;
+			case 4:dia = "Sexta-Feira ";break;
+			case 5:dia = "Sábado ";break;
+			case 6:dia = "Domingo ";break;
 		}		
 		return dia;
 	}
@@ -227,7 +187,7 @@ public class Data {
 				case(13):nome+="Treze ";break;
 				case(14):nome+="Quatorze ";break;
 				case(15):nome+="Quinze ";break;
-				case(16):nome+="Dezesses ";break;
+				case(16):nome+="Dezesseis ";break;
 				case(17):nome+="Dezessete ";break;
 				case(18):nome+="Dezoito ";break;
 				case(19):nome+="Dezenove ";break;
@@ -431,7 +391,9 @@ public class Data {
 		// TODO Auto-generated method stub
 		Data d = new Data(04,10,2032);
 		Data d1 = new Data(1,1,1900);
-		
-		System.out.println(d1.getDiaSemana());
+		Data d2 = new Data(28,11,2017);
+
+		System.out.println(d1.getDiaSemana()+d1.getDataExtenso());
+		System.out.println(d2.getDiaSemana()+d2.getDataExtenso());
 	}
 }
